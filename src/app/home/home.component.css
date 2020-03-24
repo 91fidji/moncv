@@ -1,0 +1,13 @@
+.card {
+  max-width: 400px;
+}
+
+.mat-tab-group {
+  margin-bottom: 48px;
+}
+
+.main-card {
+    display: flex; 
+  align-items: center; 
+  justify-content: center;
+}
