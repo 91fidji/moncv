@@ -7,8 +7,8 @@ import { TrainingsService} from './trainings.service';
   styleUrls: ['./trainings.component.css']
 })
 export class TrainingsComponent implements OnInit {
-trainings
-  constructor(public ts : TrainingsService) { }
+trainings;
+  constructor(public ts: TrainingsService) { }
 
   ngOnInit() {
     this.getTrainings();
@@ -18,7 +18,7 @@ trainings
     this.ts.getTrainings().subscribe(
       result => {
         this.trainings = result;
-      })
+      });
   }
 
 }
