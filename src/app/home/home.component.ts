@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MatCardModule} from '@angular/material/card';
 import { ExperiencesService } from '../experiences/experiences.service';
 import { TrainingsService} from '../trainings/trainings.service';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +13,7 @@ export class HomeComponent implements OnInit {
   formations;
 
   constructor(
-    public experiencesService:ExperiencesService,
+    public experiencesService: ExperiencesService,
     public trainingsService: TrainingsService,
     ) { }
 
@@ -24,16 +22,16 @@ export class HomeComponent implements OnInit {
     this.getTrainings();
   }
 
-  getExperiences(){
+  getExperiences() {
     this.experiencesService.getExperiences().subscribe(result => {
       this.experiences = result;
-    })
+    });
   }
 
-  getTrainings(){
+  getTrainings() {
     this.trainingsService.getTrainings().subscribe(result => {
       this.trainings = result;
-    })
-  }
+    });
 
+  }
 }

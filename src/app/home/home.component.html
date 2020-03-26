@@ -37,8 +37,8 @@
         </p>
       </mat-card-content>
     <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
+     <!--<button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>-->
     </mat-card-actions>
   </mat-card>
   </mat-grid-tile>
@@ -46,14 +46,14 @@
 </mat-tab>
 <mat-tab label="Formations"> 
    <mat-grid-list cols="2" rowHeight="200px">
-      <mat-grid-tile *ngFor="let formation of formations">
+      <mat-grid-tile *ngFor="let training of trainings">
          <mat-card>
         <mat-card-header>
-          <mat-card-title>{{formation.payload.doc.data().nom}}</mat-card-title>
-          <mat-card-subtitle>{{formation.payload.doc.data().employer}}</mat-card-subtitle>
+          <mat-card-title>{{training.payload.doc.data().nom}}</mat-card-title>
+          <mat-card-subtitle>{{training.payload.doc.data().employer}}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
-          {{formation.payload.doc.data().startDate.toDate()| date: 'dd/MM/yyyy'}} - {{formation.payload.doc.data().denDate.toDate()| date: 'dd/MM/yyyy'}}
+          {{training.payload.doc.data().startDate.toDate()| date: 'dd/MM/yyyy'}} - {{training.payload.doc.data().endDate.toDate()| date: 'dd/MM/yyyy'}}
         <p>
           The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
           A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
@@ -61,8 +61,8 @@
         </p>
       </mat-card-content>
     <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
+     <!-- <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>-->
     </mat-card-actions>
   </mat-card>
   </mat-grid-tile>

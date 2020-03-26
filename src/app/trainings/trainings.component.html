@@ -1,3 +1,43 @@
-<p>
-trainings works!
-</p>
+<form class="create-training" [formGroup]="addTrainingForm" (ngSubmit)="onSubmit(addTrainingForm.value)">
+
+    <mat-form-field appearance="outline">
+        <mat-label>Nom de la formation</mat-label>
+        <input matInput placeholder="Etablissement" formControlName="nom">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Nom de l'Ecole</mat-label>
+        <input matInput placeholder="Ecoles" formControlName="school">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>lieux</mat-label>
+        <input matInput placeholder="Lieux" formControlName="location">
+    </mat-form-field>
+
+    <button class="mat-raised-button" mat-button type="submit">Créer</button>
+</form>
+
+<table mat-table [dataSource]="trainings" class="mat-elevation-z8">
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="nom">
+        <th mat-header-cell *matHeaderCellDef> Nom </th>
+        <td mat-cell *matCellDef="let training"> {{training.payload.doc.data().nom}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="school">
+        <th mat-header-cell *matHeaderCellDef> Ecole </th>
+        <td mat-cell *matCellDef="let training"> {{training.payload.doc.data().school}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="location">
+        <th mat-header-cell *matHeaderCellDef> Lieux </th>
+        <td mat-cell *matCellDef="let training"> {{training.payload.doc.data().location}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

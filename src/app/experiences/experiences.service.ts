@@ -6,7 +6,9 @@ export class ExperiencesService {
 
   constructor(public fb: AngularFirestore) { }
 
-  getExperiences(){
-    return this.fb.collection('experiences').snapshotChanges();
+  getExperiences() {
+    return this.fb.collection('experiences', ref => {
+      return ref.orderBy('startDate', 'desc');
+    }).snapshotChanges();
   }
 }
