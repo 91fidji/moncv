@@ -28,6 +28,11 @@ import { HomeComponent } from './home/home.component';
 import { ExperiencesService } from './experiences/experiences.service';
 import { TrainingsComponent } from './trainings/trainings.component';
 import { TrainingsService } from './trainings/trainings.service';
+import { SigninComponent } from './auth/signin/signin.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { ExperienceListComponent } from './experience-list/experience-list.component';
+import { SingleExperienceComponent } from './experience-list/single-experience/single-experience.component';
+import { AuthGuardService } from './services/auth-guard.service';
 
 @NgModule({
   imports:      [
@@ -51,11 +56,26 @@ import { TrainingsService } from './trainings/trainings.service';
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'experiences', component: ExperiencesComponent },
-      { path: 'trainings', component: TrainingsComponent }
+      { path: 'trainings', component: TrainingsComponent },
+      { path: 'auth/signup', component: SignupComponent },
+      { path: 'auth/signin', component: SigninComponent },
+      { path: 'experiences/view/:id', canActivate: [AuthGuardService],  component: SingleExperienceComponent},
+      { path: '', redirectTo: '/', pathMatch: 'full' },
+      { path: '**', redirectTo: '/' }
     ]),
     AngularFireModule.initializeApp(environment.firebase)
  ],
-  declarations: [ AppComponent, HelloComponent, MainMenuComponent, ExperiencesComponent, HomeComponent, TrainingsComponent],
+  declarations: [
+    AppComponent,
+    HelloComponent,
+    MainMenuComponent,
+    ExperiencesComponent,
+    HomeComponent,
+    TrainingsComponent,
+    SigninComponent,
+    SignupComponent,
+    ExperienceListComponent,
+    SingleExperienceComponent],
   bootstrap:    [ AppComponent ],
   providers: [ AuthService, AuthGuard, ExperiencesService, TrainingsService],
 })
