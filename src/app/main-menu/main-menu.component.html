@@ -1,5 +1,19 @@
-<button mat-button class="mat-raised-button	" [matMenuTriggerFor]="mainMenu">Menu</button>
-<mat-menu #mainMenu="matMenu" xPosition="after">
-  <button mat-menu-item routerLink="experiences">Experiences</button>
-  <button mat-menu-item>Item 2</button>
-</mat-menu>
+<span>
+  <button mat-button class="mat-raised-button" [matMenuTriggerFor]="mainMenu">Menu</button>
+  <mat-menu #mainMenu="matMenu" xPosition="after">
+    <button mat-menu-item routerLink="experiences">Experiences</button>
+    <button mat-menu-item>Formations</button>
+    <button mat-menu-item>Réalisation</button>
+    <button mat-menu-item>Hobbies</button>
+  </mat-menu>
+</span>
+
+<span class="spaceFlex"></span>
+<span>
+  <button class="mat-raised-button" routerLink="auth/signin" *ngIf="!isAuth" >Connexion</button>
+</span>
+<span>
+  <button class="mat-raised-button" routerLink="auth/signup" *ngIf="!isAuth" >S'inscrire</button>
+</span>
+
+  <button class="mat-raised-button" (click)="onSignOut()" style="cursor:pointer" *ngIf="isAuth">Déconnexion</button>
