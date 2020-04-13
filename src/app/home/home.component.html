@@ -60,7 +60,7 @@
     </mat-grid-list>
   </mat-tab>
   <mat-tab label="Formations">
-    <mat-grid-list cols="2" rowHeight="200px">
+    <mat-grid-list cols="2" rowHeight="300px">
       <mat-grid-tile *ngFor="let training of trainings">
         <mat-card>
           <mat-card-header>
@@ -85,6 +85,29 @@
     </mat-grid-list>
 
   </mat-tab>
-  <mat-tab label="Réalisations"> Content 3 </mat-tab>
+  <mat-tab label="Réalisations">
+    <mat-grid-list cols="2" rowHeight="300px">
+      <mat-grid-tile *ngFor="let production of productions">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>{{production.payload.doc.data().name}}</mat-card-title>
+            <mat-card-subtitle>URL : <a href="{{production.payload.doc.data().url}}" target="_blank">{{production.payload.doc.data().siteName}}</a>
+            </mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            Informations utiles :
+            <ul>
+              <li>Technologies : Wordpress</li>
+              <li>Date de lancement : 26 mai 2016</li>
+            </ul>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button class="mat-raised-button"><a href="{{production.payload.doc.data().url}}" target="_blank">Aller sur le site</a></button>
+          </mat-card-actions>
+        </mat-card>
+        
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-tab>
   <mat-tab label="Hobbies"> Content 3 </mat-tab>
 </mat-tab-group>

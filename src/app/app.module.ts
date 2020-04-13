@@ -34,6 +34,8 @@ import { SingleExperienceComponent } from './experience-list/single-experience/s
 import { AuthGuardService } from './services/auth-guard.service';
 import { ExperienceFormComponent } from './experience-list/experience-form/experience-form.component';
 import { TopbarComponent } from './main-menu/topbar/topbar.component';
+import { ProductionsComponent } from './productions/productions.component';
+import { ProductionsService} from './services/productions.service';
 
 @NgModule({
   imports:      [
@@ -63,6 +65,7 @@ import { TopbarComponent } from './main-menu/topbar/topbar.component';
       { path: 'experiences', canActivate: [AuthGuardService], component: ExperienceListComponent },
       { path: 'experiences/new', canActivate: [AuthGuardService], component: ExperienceFormComponent },
       { path: 'experiences/view/:id', canActivate: [AuthGuardService],  component: SingleExperienceComponent},
+      { path: 'realisations', canActivate: [AuthGuardService], component:ProductionsComponent},
       { path: '', redirectTo: '/', pathMatch: 'full' },
       { path: '**', redirectTo: '/' }
     ]),
@@ -80,9 +83,10 @@ import { TopbarComponent } from './main-menu/topbar/topbar.component';
     ExperienceListComponent,
     SingleExperienceComponent,
     ExperienceFormComponent,
-    TopbarComponent
+    TopbarComponent,
+    ProductionsComponent
   ],
   bootstrap:    [ AppComponent ],
-  providers: [AuthService, AuthGuard, ExperiencesService, TrainingsService, AuthGuardService],
+  providers: [AuthService, AuthGuard, ExperiencesService, TrainingsService, AuthGuardService, ProductionsService],
 })
 export class AppModule { }

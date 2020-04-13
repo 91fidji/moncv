@@ -1,0 +1,15 @@
+<form class="create-production" [formGroup]="addProductionForm" (ngSubmit)="onSubmit(addProductionForm.value)">
+    <mat-form-field>
+        <mat-label>Nom du site </mat-label>
+        <input type="text" matInput placeholder="Nom" formControlName="name">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>url</mat-label>
+        <input type="text" matInput placeholder="url" formControlName="url">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>wNom du website</mat-label>
+        <input type="text" matInput placeholder="Nom du website" formControlName="websiteName">
+    </mat-form-field>
+    <button type="submit" mat-button class="mat-raised-button">Ajouter une nouvelle production</button>
+</form>
