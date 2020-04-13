@@ -1,0 +1,10 @@
+<div class="btn">
+    <span>
+        <button class="mat-raised-button" routerLink="auth/signin" *ngIf="!isAuth">Connexion</button>
+    </span>
+    <span>
+        <button class="mat-raised-button" routerLink="auth/signup" *ngIf="!isAuth">S'inscrire</button>
+    </span>
+
+    <button class="mat-raised-button" (click)="onSignOut()" style="cursor:pointer" *ngIf="isAuth">Déconnexion</button>
+</div>
