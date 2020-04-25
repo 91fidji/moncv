@@ -1,5 +1,8 @@
 <span>
-  <button mat-button class="mat-raised-button" [matMenuTriggerFor]="mainMenu">Menu</button>
+<a href="/#monCv"><button mat-button class="mat-raised-button">MonCv</button></a>
+<a href="/#mecontacter"><button mat-button class="mat-raised-button"> Contact</button></a>
+
+  <button mat-button class="mat-raised-button" [matMenuTriggerFor]="mainMenu">Ajouter</button>
   <mat-menu #mainMenu="matMenu" xPosition="after">
     <button mat-menu-item routerLink="experiences">Experiences</button>
     <button mat-menu-item routerLink="trainings">Formations</button>

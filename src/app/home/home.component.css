@@ -1,28 +1,37 @@
-
-.main-card {
-  max-width: 400px;
-}
-
-.mat-tab-group {
-  margin-bottom: 48px;
-}
-
-.main-card {
-  display: flex; 
-  align-items: center; 
-  justify-content: center;
-}
-
-.header-btn {
-  margin-top: 30px;
-}
-
 .jumbotron {
   background-image: url('./../img/developer-home.jpg');
-  background-size: auto, 300px, center;
+  background-size: cover;
   background-repeat: no-repeat;
   height: 300px;
 }
 #jumbotron-text {
     color: rgb(248, 203, 203);
 }
+
+.main-card {
+  text-align: left; 
+  margin: 10px 10px 10px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mecontacter {
+  text-align:left; 
+  margin: 10px 10px 10px 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.mat-tab-group {
+  margin-bottom: 48px;
+}
+
+.card {
+  margin: 5px;
+}
+
+.header-btn {
+  margin-top: 30px;
+}
+

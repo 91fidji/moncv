@@ -36,6 +36,8 @@ import { ExperienceFormComponent } from './experience-list/experience-form/exper
 import { TopbarComponent } from './main-menu/topbar/topbar.component';
 import { ProductionsComponent } from './productions/productions.component';
 import { ProductionsService} from './services/productions.service';
+import { MatDividerModule } from '@angular/material/divider';
+
 
 @NgModule({
   imports:      [
@@ -56,6 +58,7 @@ import { ProductionsService} from './services/productions.service';
     ReactiveFormsModule,
     MatInputModule,
     MatButtonModule,
+    MatDividerModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
 /*       { path: 'experiences', component: ExperienceListComponent },
@@ -65,7 +68,7 @@ import { ProductionsService} from './services/productions.service';
       { path: 'experiences', canActivate: [AuthGuardService], component: ExperienceListComponent },
       { path: 'experiences/new', canActivate: [AuthGuardService], component: ExperienceFormComponent },
       { path: 'experiences/view/:id', canActivate: [AuthGuardService],  component: SingleExperienceComponent},
-      { path: 'realisations', canActivate: [AuthGuardService], component:ProductionsComponent},
+      { path: 'realisations', canActivate: [AuthGuardService], component: ProductionsComponent},
       { path: '', redirectTo: '/', pathMatch: 'full' },
       { path: '**', redirectTo: '/' }
     ]),

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ExperiencesService } from '../experiences/experiences.service';
 import { TrainingsService} from '../trainings/trainings.service';
 import { ProductionsService } from '../services/productions.service';
+import { FormGroup, FormControlName, EmailValidator, FormBuilder, Validators } from '@angular/forms';
 
 
 @Component({
@@ -15,16 +16,21 @@ export class HomeComponent implements OnInit {
   formations;
   productions;
 
+  sendEmailForm: FormGroup;
+  email: string;
+
   constructor(
     public experiencesService: ExperiencesService,
     public trainingsService: TrainingsService,
     public productionsService: ProductionsService,
+    private fb: FormBuilder,
     ) { }
 
   ngOnInit() {
     this.getExperiences();
     this.getTrainings();
     this.getProductions();
+    this.createForm();
   }
 
   getExperiences() {
@@ -43,5 +49,17 @@ export class HomeComponent implements OnInit {
     this.productionsService.getProductions().subscribe(result => {
       this.productions = result;
     });
+  }
+
+  createForm() {
+    this.sendEmailForm = this.fb.group({
+      email: ['', Validators.email],
+      nom:  [''],
+      message: [''],
+    });
+  }
+
+  addEndDate(experience) {
+    console.log('exerience', experience);
   }
 }
