@@ -28,7 +28,6 @@ export class AuthService {
     );
   }
 
-
   signInUser(email: string, password: string) {
     return new Promise(
       (resolve, reject) => {
