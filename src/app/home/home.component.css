@@ -17,11 +17,17 @@
 }
 
 .mecontacter {
-  text-align:left; 
+  width: 100%;
+  text-align:center; 
   margin: 10px 10px 10px 10px;
   justify-content: center;
   align-items: center;
 }
+
+mat-form-field {
+  width: 90%;
+}
+
 
 .mat-tab-group {
   margin-bottom: 48px;

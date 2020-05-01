@@ -58,6 +58,7 @@ import { MatDividerModule } from '@angular/material/divider';
     ReactiveFormsModule,
     MatInputModule,
     MatButtonModule,
+    MatDividerModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'experiences', component: ExperiencesComponent },
