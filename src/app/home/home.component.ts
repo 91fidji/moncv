@@ -49,6 +49,8 @@ export class HomeComponent implements OnInit {
   getProductions() {
     this.productionsService.getProductions().subscribe(result => {
       this.productions = result;
+      console.log(this.productions.id);
+
     });
   }
 
